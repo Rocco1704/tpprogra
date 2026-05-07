@@ -10,6 +10,7 @@ public class GrafoVecinos {
     protected ArrayList<HashSet<Localidad>> vecinos;
     protected List<Localidad> localidades;
 
+    //Verifica la lista de localidades en el constru 
     public GrafoVecinos(int numLocalidades, List<Localidad> localidades) {
         if (localidades == null) {
             throw new IllegalArgumentException("La lista de localidades no puede ser null.");

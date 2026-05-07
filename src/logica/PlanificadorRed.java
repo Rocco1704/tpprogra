@@ -14,14 +14,16 @@ public class PlanificadorRed {
         this.localidades = new ArrayList<>();
     }
 
-    public void agregarLocalidad(Localidad localidad) {
+    public boolean agregarLocalidad(Localidad localidad) {
         if (localidad == null) {
             throw new IllegalArgumentException("La localidad no puede ser null.");
         }
         if (localidades.contains(localidad)) {
-            throw new IllegalArgumentException("La localidad ya fue agregada: " + localidad.getNombre());
+            //throw new IllegalArgumentException("La localidad ya fue agregada: " + localidad.getNombre());
+            return false;
         }
         localidades.add(localidad);
+        return true;
     }
 
     public void eliminarLocalidad(Localidad localidad) {

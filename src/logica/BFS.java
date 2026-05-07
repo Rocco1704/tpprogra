@@ -56,4 +56,6 @@ public class BFS {
     private void eliminarPrimero() {
         cola.remove(0);
     }
+
+
 }
