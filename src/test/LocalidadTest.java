@@ -1,7 +1,12 @@
 package test;
-import static org.junit.Assert.*; 
+import static org.junit.Assert.*;
+
+import java.awt.List;
+import java.util.ArrayList;
+
 import org.junit.Test; //importa junit
 import datos.Localidad;	//CLASE LOCALIDAD
+import logica.GrafoVecinos;
 import logica.PlanificadorRed;
 
 public class LocalidadTest {
@@ -85,4 +90,25 @@ public class LocalidadTest {
 	 }
 	 
 	 
+	 
+	 
+	 /////////////////////////HAY QUE HACERLO FUNCAR
+	 
+	 
+	 
+	 /* 
+	 @Test(expected = IllegalArgumentException.class)
+	 public void testAristaDistanciaCero() {
+	     Localidad loc1 = new Localidad("JCP", "BSAS", -34.5, -58.7);
+	     Localidad loc2 = new Localidad("San Miguel", "BSAS", -34.5, -58.8);
+	     
+	     List<Localidad> lista = new ArrayList<>();
+	     lista.add(loc1);
+	     lista.add(loc2);
+	     
+	     GrafoVecinos grafo = new GrafoVecinos(2, lista);
+	     
+	     // Debería lanzar error si la distancia es 0 o negativa
+	     grafo.agregarArista(loc1, loc2, 0.0);
+	 }*/
 }

@@ -11,5 +11,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Tadeo/Downloads/Progra3/JMapViewer.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -21,7 +21,7 @@ import datos.Localidad;
 import datos.ParametroCosto;
 import datos.PlanificacionResultado;
 import logica.PlanificadorRed;
-
+import org.openstreetmap.gui.jmapviewer.JMapViewer; //MAPA
 public class Interfaz extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -75,9 +75,10 @@ public class Interfaz extends JFrame {
 		campoProvincia = new JTextField(10);
 		campoLatitud = new JTextField(8);
 		campoLongitud = new JTextField(8);
-
+		
 		JButton btnAgregar = new JButton("Agregar");
 		JButton btnEliminar = new JButton("Eliminar");
+		
 
 		panelFormulario.add(new JLabel("Nombre:"));
 		panelFormulario.add(campoNombre);
@@ -116,13 +117,18 @@ public class Interfaz extends JFrame {
 
 		JButton btnPlanificar = new JButton("PLANIFICAR");
 		btnPlanificar.setFont(new Font("Arial", Font.BOLD, 13));
-
+		
 		panelParametros.add(new JLabel("Costo/km ($):"));
 		panelParametros.add(campoCostoPorKm);
 		panelParametros.add(new JLabel("% aumento >300km:"));
 		panelParametros.add(campoPorcentaje);
 		panelParametros.add(new JLabel("Costo fijo interprovincial ($):"));
 		panelParametros.add(campoCostoFijo);
+		////////////////////
+		JButton btnVerMapa = new JButton("Ver Mapa");
+		btnVerMapa.setFont(new Font("Arial", Font.BOLD, 13)); // Para que combine con el de Planificar
+		panelParametros.add(btnVerMapa);
+		////////////////////////////////////
 		panelParametros.add(btnPlanificar);
 
 		panelSur.add(panelParametros, BorderLayout.NORTH);
@@ -133,8 +139,28 @@ public class Interfaz extends JFrame {
 		areaResultado.setFont(new Font("Monospaced", Font.PLAIN, 12));
 		areaResultado.setBorder(new TitledBorder("Resultado"));
 		panelSur.add(new JScrollPane(areaResultado), BorderLayout.CENTER);
-
 		add(panelSur, BorderLayout.SOUTH);
+		
+		
+		////////////////////////////////////////////////////////////MAPA
+		/// 
+		// ── Evento para abrir el mapa ────────────────────────────────
+		btnVerMapa.addActionListener(e -> {
+		    // Creamos la ventana emergente
+		    JFrame ventanaMapa = new JFrame("Mapa de Conexiones");
+		    ventanaMapa.setBounds(150, 150, 800, 600);
+		    
+		    // Creamos el mapa
+		    JMapViewer visorMapa = new JMapViewer();
+		    
+		    // Centramos el mapa en Argentina (opcional pero recomendado)
+		    visorMapa.setDisplayPosition(new org.openstreetmap.gui.jmapviewer.Coordinate(-34.6, -58.4), 6);
+		    
+		    // Agregamos el mapa a su ventana
+		    ventanaMapa.add(visorMapa);
+		    ventanaMapa.setVisible(true);
+		});
+		///////////////////////////////////////////////////////////////
 
 		// ── Eventos de botones ───────────────────────────────────────
 		btnAgregar.addActionListener(e -> agregarLocalidad());
