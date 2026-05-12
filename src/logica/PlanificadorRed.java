@@ -42,15 +42,12 @@ public class PlanificadorRed {
             throw new IllegalArgumentException("Se necesitan al menos 2 localidades para planificar.");
         }
 
-        // Paso 1: construir el grafo completo con todos los costos
         GrafoLocalidades grafoLocalidades = new GrafoLocalidades(parametros);
         GrafoConPesos grafoCompleto = grafoLocalidades.construirGrafoCompleto(localidades);
 
-        // Paso 2: correr Prim para obtener el AGM
         Prim prim = new Prim();
         GrafoConPesos grafoAGM = prim.primRecorrido(grafoCompleto);
 
-        // Paso 3: armar el resultado
         List<conexion> conexiones = grafoAGM.getAristas();
         double costoTotal = calcularCostoTotal(conexiones);
 

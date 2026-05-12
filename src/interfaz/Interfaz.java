@@ -34,22 +34,18 @@ public class Interfaz extends JFrame {
 
     private PlanificadorRed planificador;
 
-    // Campos formulario
     private JTextField campoNombre;
     private JTextField campoProvincia;
     private JTextField campoLatitud;
     private JTextField campoLongitud;
 
-    // Tabla
     private JTable tablaLocalidades;
     private DefaultTableModel modeloTabla;
 
-    // Parámetros
     private JTextField campoCostoPorKm;
     private JTextField campoPorcentaje;
     private JTextField campoCostoFijo;
 
-    // Resultado
     private JTextArea areaResultado;
 
     public static void main(String[] args) {

@@ -45,13 +45,11 @@ public class GrafoLocalidades {
 
         double costo = distancia * costoPorKm;
 
-        // Regla 1: aumento por larga distancia
         if (distancia > 300) {
             double factor = 1 + (porcentajeAumentoLargaDistancia / 100.0);
             costo = costo * factor;
         }
 
-        // Regla 2: costo fijo interprovincial
         if (!localidad1.getProvincia().equalsIgnoreCase(localidad2.getProvincia())) {
             costo += costoFijoInterProvincia;
         }

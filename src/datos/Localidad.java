@@ -47,24 +47,6 @@ public class Localidad {
     public double getLongitud() { return longitud; }
     public void setLongitud(double longitud) { this.longitud = longitud; }
 
-    /*
-    @Override
-    public int hashCode() {
-        return Objects.hash(nombre, provincia, latitud, longitud);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
-        if (getClass() != obj.getClass()) return false;
-        Localidad otra = (Localidad) obj;
-        return Double.doubleToLongBits(latitud) == Double.doubleToLongBits(otra.latitud)
-            && Double.doubleToLongBits(longitud) == Double.doubleToLongBits(otra.longitud)
-            && Objects.equals(nombre, otra.nombre)
-            && Objects.equals(provincia, otra.provincia);
-    }
-    */
     @Override
     public String toString() {
         return nombre + " (" + provincia + ")";
